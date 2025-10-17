@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .control-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="datetime-local"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #startBtn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    #stopBtn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+    .status {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .active {
+      background-color: #c8e6c9;
+    }
+    .inactive {
+      background-color: #ffcdd2;
+    }
+    .time-slot {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .time-slot input {
+      margin: 3px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Page Change Monitor</h2>
+  
+  <div class="control-group">
+    <label>Ziel-Zeitpunkt:</label>
+    <input type="datetime-local" id="targetTime">
+  </div>
+
+  <div class="control-group">
+    <label>Zeitfenster & Refresh-Raten:</label>
+    
+    <div class="time-slot">
+      <label>Zeitfenster 1:</label>
+      <input type="number" id="minutes1" placeholder="Minuten vorher" min="0">
+      <input type="number" id="rate1" placeholder="Refresh-Rate (Sekunden)" min="1">
+    </div>
+
+    <div class="time-slot">
+      <label>Zeitfenster 2:</label>
+      <input type="number" id="minutes2" placeholder="Minuten vorher" min="0">
+      <input type="number" id="rate2" placeholder="Refresh-Rate (Sekunden)" min="1">
+    </div>
+
+    <div class="time-slot">
+      <label>Zeitfenster 3:</label>
+      <input type="number" id="minutes3" placeholder="Minuten vorher" min="0">
+      <input type="number" id="rate3" placeholder="Refresh-Rate (Sekunden)" min="1">
+    </div>
+
+    <div class="time-slot">
+      <label>Zeitfenster 4:</label>
+      <input type="number" id="minutes4" placeholder="Minuten vorher" min="0">
+      <input type="number" id="rate4" placeholder="Refresh-Rate (Sekunden)" min="1">
+    </div>
+  </div>
+
+  <button id="startBtn">Start Monitoring</button>
+  <button id="stopBtn">Stop Monitoring</button>
+  <button id="muteBtn">Musik stoppen</button>
+
+  <div id="status" class="status inactive">
+    Status: Inaktiv
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
