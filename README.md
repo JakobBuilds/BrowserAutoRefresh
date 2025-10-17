@@ -2,7 +2,7 @@
 
 Browser plugin to refresh webpage in predefined frequencies
 
-Firefox installation:
+Firefox testing:
 
 about:debugging#/runtime/this-firefox
 
